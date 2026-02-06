@@ -102,7 +102,35 @@ from `dez2026.yellow_tripdata_2024`
 Answer: 20,332,093
 
 
+### Q2 sql query
+```sql
+SELECT COUNT(DISTINCT PULocationID) AS distinct_pickup_locations
+FROM `dez2026.yellow_tripdata_2024`;
 
+SELECT COUNT(DISTINCT PULocationID) AS distinct_pickup_locations
+FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
+Answer: 0 MB for the External Table and 155.12 MB for the Materialized Table
+```
+
+
+
+### Q3 sql query
+```sql
+SELECT PULocationID
+FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
+
+SELECT PULocationID, DOLocationID
+FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
+```
+
+
+
+### Q4 sql query
+```sql
+select count(1) 
+from `dez2026.yellow_tripdata_2024` 
+where fare_amount = 0;
+```
 
 
 
