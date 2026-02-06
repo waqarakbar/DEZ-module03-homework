@@ -109,8 +109,9 @@ FROM `dez2026.yellow_tripdata_2024`;
 
 SELECT COUNT(DISTINCT PULocationID) AS distinct_pickup_locations
 FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
-Answer: 0 MB for the External Table and 155.12 MB for the Materialized Table
 ```
+Answer: 0 MB for the External Table and 155.12 MB for the Materialized Table
+
 
 
 
@@ -122,7 +123,7 @@ FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
 SELECT PULocationID, DOLocationID
 FROM `dez2026.yellow_tripdata_2024_non_partitioned`;
 ```
-
+Answer: BigQuery is a columnar database, and it only scans the specific columns requested in the query. Querying two columns (PULocationID, DOLocationID) requires reading more data than querying one column (PULocationID), leading to a higher estimated number of bytes processed.
 
 
 ### Q4 sql query
@@ -131,6 +132,8 @@ select count(1)
 from `dez2026.yellow_tripdata_2024` 
 where fare_amount = 0;
 ```
+Answer: 8,333
+
 
 
 
@@ -145,6 +148,7 @@ SELECT DISTINCT VendorID
 FROM `kickstart-reporting-data.dez2026.yellow_tripdata_2024_partitioned`
 WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15';
 ```
+Answer: 310.24 MB for non-partitioned table and 26.84 MB for the partitioned table
 
 
 
