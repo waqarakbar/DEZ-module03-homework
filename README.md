@@ -94,7 +94,7 @@ uv add --dev <package-name>
 ## Homework queries / bash commands 
 
 
-Q1 sql query
+### Q1 sql query
 ```sql
 select count(1) 
 from `dez2026.yellow_tripdata_2024`
