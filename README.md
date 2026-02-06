@@ -134,6 +134,20 @@ where fare_amount = 0;
 
 
 
+### Q6 sql query
+```sql
+SELECT DISTINCT VendorID
+FROM `kickstart-reporting-data.dez2026.yellow_tripdata_2024_non_partitioned`
+WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15';
+
+
+SELECT DISTINCT VendorID
+FROM `kickstart-reporting-data.dez2026.yellow_tripdata_2024_partitioned`
+WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15';
+```
+
+
+
 
 ## License
 
